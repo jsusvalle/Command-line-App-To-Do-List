@@ -11,13 +11,13 @@ switch(comandArgv) {
     break;
 
     case 'list': 
-        let listTask = toDo.getListTask();
+        let listTask = toDo.getListTask(argv.completed);
 
         for (let task of listTask) {
-            console.log('\n---------To-Do-----------'.green);
-            console.log(task.description);
-            console.log('State: ', task.completed);
-            console.log('---------------------------'.green);
+            console.log('\n---------To-Do-----------'.brightCyan);
+            console.log(task.description.brightWhite);
+            console.log('State: '.magenta, task.completed);
+            console.log('--------------------------'.brightCyan);
         }
     break;
 

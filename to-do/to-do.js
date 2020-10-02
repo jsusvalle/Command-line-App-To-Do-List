@@ -33,14 +33,15 @@ const createTask = (description) => {
     return newTask;
 }
 
-const getListTask = () => {
+const getListTask = (stateTask) => {
     getDB();
 
-    return listTask;
+    let filterTask = listTask.filter(task => task.completed.toString() == stateTask);
+
+    return filterTask;
 }
 
 const updateTask = (description, completed = true) => {
-    
     getDB();
 
     let index = listTask.findIndex(task => task.description === description);
